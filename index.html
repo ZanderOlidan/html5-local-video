@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.plyr.io/3.6.3/plyr.js"></script>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.3/plyr.css" />
+</head>
+
+<body>
+    <div class="upload">
+        <label>Video <input type="file" id="video-upload"></label>   
+        <label>Subtitle <input type="file" id="subtitle-upload"></label>
+    </div>
+
+    <video id="player" playsinline controls crossorigin>
+        <!-- Captions are optional -->
+        <track id="sub" kind="captions" label="English captions" srclang="en" default />
+    </video>
+    <script>
+    (function localFileVideoPlayer() {
+        const player = new Plyr('video', { captions: { active: true }});
+        window.player = player;
+        const URL = window.URL || window.webkitURL
+        const playSelectedFile = function (event) {
+            var file = this.files[0];
+            var type = file.type;
+            var videoNode = document.querySelector('video');
+
+            var fileURL = URL.createObjectURL(file);
+            videoNode.src = fileURL;
+        }
+
+        const useSubtitle = function (e) {
+            const file = this.files[0];
+            const fileUrl = URL.createObjectURL(file);
+            const subNode = document.getElementById('sub');
+            sub.src = fileUrl;
+        }
+        const inputNode = document.getElementById('video-upload');
+        const subNode = document.getElementById('subtitle-upload');
+        inputNode.addEventListener('change', playSelectedFile, false);
+        inputNode.addEventListener('change', useSubtitle, false);
+
+    })()
+    </script>
+</body>
+
+</html>
