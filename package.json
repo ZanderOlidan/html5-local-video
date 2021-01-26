@@ -1,0 +1,23 @@
+{
+  "name": "html5player",
+  "version": "1.0.0",
+  "description": "Mainly for the sole reason of sharing the screen on Chrome (e.g. using them on Google Meets)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZanderOlidan/html5-local-video.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZanderOlidan/html5-local-video/issues"
+  },
+  "homepage": "https://github.com/ZanderOlidan/html5-local-video#readme",
+  "dependencies": {
+    "srt-webvtt": "^1.0.1"
+  }
+}
