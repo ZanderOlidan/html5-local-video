@@ -1,22 +1,12 @@
 {
-  "name": "html5player",
-  "version": "1.0.0",
-  "description": "Mainly for the sole reason of sharing the screen on Chrome (e.g. using them on Google Meets)",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "parcel build index.html --bundle-node-modules --target browser"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ZanderOlidan/html5-local-video.git"
+  "devDependencies": {
+    "parcel": "^1.12.4",
+    "parcel-plugin-inliner": "^1.0.14",
+    "posthtml": "^0.15.1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ZanderOlidan/html5-local-video/issues"
-  },
-  "homepage": "https://github.com/ZanderOlidan/html5-local-video#readme",
   "dependencies": {
     "srt-webvtt": "^1.0.1"
   }
